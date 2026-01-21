@@ -7,10 +7,10 @@ def age_plus(age):
     
     
     # 나이를 더함
-    age_plus += age
+    age += 1
     
     # 더한 나이를 반환
-    return age_plus
+    return age
 
 
 # 이름과 성별을 부르도록 출력("나야 홍길동, 남자")
