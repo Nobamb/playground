@@ -12,6 +12,6 @@ class ClassMethod:
     def age_plus(self):
         self.age += 1
         return self.age
-    # 메소드2. 이름을 부르도록 출력("나야 홍길동")
-    def call_name(self):
-        return f"나야 {self.name}"
+    # 메소드2. 이름, 성별을 부르도록 출력("나야 홍길동 남자")
+    def call_name_gender(self):
+        return f"나야 {self.name} {self.gender}"
