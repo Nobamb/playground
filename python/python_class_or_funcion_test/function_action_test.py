@@ -18,4 +18,18 @@ sys.path.append(path_grandparent)
 # # age_plus, call_name_gender 가져오기
 from python_class_or_funcion.function_action import age_plus, call_name_gender
 
-# 
+
+# hong 데이터 가져오기
+name = hong["name"]
+age = hong["age"]
+gender = hong["gender"]
+
+
+# age_plus 실행(실행 값 저장)
+new_age = age_plus(age)
+# call_name_gender 실행(실행 값 저장)
+i_am_hong = call_name_gender(name, gender)
+
+# 출력
+print(new_age)
+print(i_am_hong)
