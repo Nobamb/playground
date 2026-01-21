@@ -19,3 +19,21 @@ sys.path.append(path_grandparent)
 from python_class_or_funcion.ClassMethod import ClassMethod
 
 
+# hong 데이터 가져오기
+name = hong["name"]
+age = hong["age"]
+gender = hong["gender"]
+
+
+# 클래스에 hong 데이터 가져오기
+person = ClassMethod(name, age,gender)
+
+# age_plus 메소드 실행(실행값 저장)
+new_age = person.age_plus()
+
+# call_name_gender 메소드 실행(실행값 저장)
+i_am_hong = person.call_name_gender()
+
+# 출력
+print(new_age)
+print(i_am_hong)
