@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/* ===========================
+   전체 페이지 스타일
+   =========================== */
+
+/* body: 전체 화면을 덮으며 게임 화면을 중앙에 배치 */
+body {
+  margin: 0; /* 기본 마진 제거 */
+  display: flex; /* Flexbox로 중앙 정렬 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  min-height: 100vh; /* 뷰포트 전체 높이 사용 */
+  background-color: #222; /* 어두운 배경색 */
+  overflow: hidden; /* 스크롤바 숨김 */
+  font-family: "Arial", sans-serif; /* 기본 폰트 */
+}
+
+/* ===========================
+   게임 화면 스타일
+   =========================== */
+
+/* #gameScreen: 게임이 진행되는 메인 영역 */
+#gameScreen {
+  width: 1000px; /* 가로 1000px */
+  height: 600px; /* 세로 600px */
+  position: relative; /* 자식 요소의 absolute 위치 기준 */
+  overflow: hidden; /* 화면 밖으로 나간 요소 숨김 */
+  background-color: #444; /* 어두운 회색 배경 */
+  border: 5px solid #000; /* 검은색 테두리 */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* 그림자 효과 */
+}
+
+/* ===========================
+   플레이어 스타일
+   =========================== */
+
+/* #player: 사용자가 조작하는 캐릭터 */
+#player {
+  width: 100px; /* 가로 100px */
+  height: 100px; /* 세로 100px */
+  background-color: #00ff00; /* 밝은 녹색 */
+  position: absolute; /* 절대 위치 (게임 화면 기준) */
+  bottom: 50px; /* 하단에서 50px 위에 배치 */
+  left: 50%; /* 수평 중앙 (JS에서 재설정됨) */
+  transform: translateX(-50%); /* 정확한 중앙 정렬 (JS에서 재설정됨) */
+  z-index: 10; /* 똥보다 위에 표시 */
+  border-radius: 10px; /* 모서리 둥글게 */
+}
+
+/* ===========================
+   점수판 스타일
+   =========================== */
+
+/* #score: 점수를 표시하는 영역 */
+#score {
+  width: 50%; /* 화면의 절반 너비 */
+  height: 100px; /* 높이 100px */
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+  position: absolute; /* 절대 위치 */
+  top: 0; /* 상단에 배치 */
+  left: 0; /* 왼쪽에 정렬 */
+  display: flex; /* Flexbox로 내용 중앙 정렬 */
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+  color: white; /* 흰색 글씨 */
+  font-size: 24px; /* 기본 텍스트 크기 */
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+  padding: 10px; /* 내부 여백 */
+}
+
+/* #scoreNum: 실제 점수 숫자 */
+#scoreNum {
+  font-size: 32px; /* 32px 크기 */
+  color: white; /* 흰색 */
+  font-weight: bold; /* 굵은 글씨 */
+  margin-left: 10px; /* "Score:" 레이블과 간격 */
+}
+
+/* ===========================
+   버튼 공통 스타일
+   =========================== */
+
+/* .game-button: 시작/재시작 버튼 공통 스타일 */
+.game-button {
+  position: absolute; /* 절대 위치 */
+  padding: 15px 30px; /* 내부 여백 */
+  font-size: 24px; /* 글자 크기 */
+  color: white; /* 흰색 글씨 */
+  background-color: #ff6600; /* 오렌지색 배경 */
+  border: none; /* 테두리 없음 */
+  border-radius: 10px; /* 둥근 모서리 */
+  cursor: pointer; /* 마우스 커서 변경 */
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease; /* 부드러운 전환 효과 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 */
+  font-family: "Arial", sans-serif; /* 폰트 */
+  z-index: 30; /* 최상위에 표시 */
+}
+
+/* .game-button:hover: 마우스 올렸을 때 */
+.game-button:hover {
+  background-color: #ff9900; /* 밝은 오렌지색 */
+  transform: translateY(-2px); /* 살짝 위로 이동 */
+}
+
+/* ===========================
+   시작 버튼 스타일
+   =========================== */
+
+/* #startButton: 게임 시작 버튼 (화면 중앙) */
+#startButton {
+  top: 50%; /* 세로 중앙 */
+  left: 50%; /* 가로 중앙 */
+  transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+}
+
+/* ===========================
+   재시작 버튼 스타일
+   =========================== */
+
+/* #reStartButton: 재시작 버튼 (좌측 하단) */
+#reStartButton {
+  bottom: 50px; /* 하단에서 50px */
+  left: 50px; /* 왼쪽에서 50px */
+  display: none; /* 초기에 숨김 (JS에서 표시) */
+}
+
+/* ===========================
+   게임 오버 텍스트 스타일
+   =========================== */
+
+/* #gameOverText: 게임 오버 시 표시되는 텍스트 */
+#gameOverText {
+  font-size: 64px; /* 큰 글씨 */
+  color: white; /* 흰색 */
+  position: absolute; /* 절대 위치 */
+  top: 100px; /* 상단에서 100px (중앙보다 살짝 위) */
+  left: 50%; /* 가로 중앙 */
+  transform: translateX(-50%); /* 정확한 중앙 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  z-index: 25; /* 버튼보다 아래, 게임 요소보다 위 */
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* 텍스트 그림자 */
+  display: none; /* 초기에 숨김 (JS에서 표시) */
+  font-family: "Arial", sans-serif; /* 폰트 */
+}
+
+/* ===========================
+   똥(장애물) 스타일
+   =========================== */
+
+/* .item: 위에서 떨어지는 똥 클래스 */
+.item {
+  width: 50px; /* 가로 50px */
+  height: 50px; /* 세로 50px */
+  background-color: #8b4513; /* 갈색 (똥 색상) */
+  position: absolute; /* 절대 위치 */
+  top: -50px; /* 화면 위에서 시작 (보이지 않음) */
+  z-index: 5; /* 플레이어보다 아래 */
+  border-radius: 50%; /* 원형 */
+  /* CSS transition으로 부드럽게 떨어지는 효과 */
+  transition: top 3s linear; /* top 속성이 3초 동안 선형으로 변화 */
+}
