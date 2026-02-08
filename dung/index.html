@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>똥 피하기 게임</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 게임 화면 컨테이너 -->
+    <div id="gameScreen">
+      <!-- 플레이어 캐릭터 -->
+      <div id="player"></div>
+
+      <!-- 점수판 영역 -->
+      <div id="score">Score: <span id="scoreNum">0</span></div>
+
+      <!-- 게임 오버 텍스트 (초기에 숨김) -->
+      <div id="gameOverText">Game Over</div>
+
+      <!-- 시작 버튼 -->
+      <button id="startButton" class="game-button">Start Game</button>
+
+      <!-- 재시작 버튼 (초기에 숨김) -->
+      <button id="reStartButton" class="game-button">Restart</button>
+    </div>
+
+    <!-- 메인 JavaScript 파일 (ES6 모듈) -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
