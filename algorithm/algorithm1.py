@@ -53,9 +53,11 @@ def algorithmC(n):
 value = int(input("값을 넣어주세요"))
 
 # 10000이상 100000 이하
+if(value >= 10000 and value <=100000):
+    print(algorithmA(value))
 
-print(algorithmA(value))
+    print(algorithmB(value))
 
-print(algorithmB(value))
-
-print(algorithmC(value))
+    print(algorithmC(value))
+else:
+    print("값이 범위를 초과했습니다.")
