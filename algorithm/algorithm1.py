@@ -28,6 +28,25 @@ def algorithmB(n):
     return total
 
 
+# algorithmC는 n번 반복하여 기존 값에 1씩 더하는 식
+
+def algorithmC(n):
+    # 더할 값 지정
+    total = 0
+    # 초기 더할 값 지정
+    add_value = 0
+    # 0부터 n-1까지 지정
+    for _ in range(n):
+        # 먼저 add_value에 1씩 더함
+        add_value += 1
+        # 1더한만큼 total에 더함
+        total += add_value
+    
+    # total 반환
+    return total
+
+
+
 
 
 # 값을 넣을 변수 지정
@@ -38,3 +57,5 @@ value = int(input("값을 넣어주세요"))
 print(algorithmA(value))
 
 print(algorithmB(value))
+
+print(algorithmC(value))
