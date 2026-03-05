@@ -1,0 +1,7 @@
+# ./backend/requirements.txt
+# Python 프로젝트의 의존성(라이브러리) 목록입니다.
+
+fastapi
+uvicorn[standard]
+psycopg2-binary
+SQLAlchemy
